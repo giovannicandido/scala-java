@@ -21,18 +21,17 @@ object PessoaOperations {
     Pessoa(nome, sobrenome, idade)
   }
 
-  def gerarLista(tamanho: Int): mutable.ListBuffer[Pessoa] = {
-    val pessoas: mutable.ListBuffer[Pessoa] = mutable.ListBuffer.empty
-    for (i <- 0 until tamanho) {
-      pessoas.append(gerarPessoaRandon(50))
-    }
-    pessoas
+  def gerarLista(tamanho: Int): List[Pessoa] = {
+    List.fill(tamanho)(gerarPessoaRandon(50))
   }
 
-  def imprimirLista[T](lista: mutable.ListBuffer[T]) {
-    for (i <- 0 until lista.size) {
-      println(lista(i))
-    }
+  def imprimirLista[T](lista: List[T]) {
+
+//    lista.foreach({ e => println(e)})
+//    lista.foreach( e => println(e))
+//    lista.foreach(println(_))
+//    lista.foreach(println)
+    lista foreach println
   }
 
 }
