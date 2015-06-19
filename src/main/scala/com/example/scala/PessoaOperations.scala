@@ -28,7 +28,7 @@ object PessoaOperations {
   def imprimirLista[T](lista: List[T]) {
 
 //    lista.foreach({ e => println(e)})
-//    lista.foreach( e => println(e))
+//    lista.foreach( _ => println(_))
 //    lista.foreach(println(_))
 //    lista.foreach(println)
     lista foreach println
