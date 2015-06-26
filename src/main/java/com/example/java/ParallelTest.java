@@ -2,7 +2,7 @@ package com.example.java;
 
 import java.util.function.Supplier;
 import java.util.stream.IntStream;
-public class ParallelTestJava {
+public class ParallelTest {
     private static <T> T measure(Supplier<T> func) {
         long start = System.nanoTime();
         T result = func.get();
@@ -18,7 +18,7 @@ public class ParallelTestJava {
         Permutations.guava("abcdefghijk").forEach(i -> ++sum);
     }
     public static void main(String... args) {
-        measure(ParallelTestJava::heavyComputation);
+        measure(ParallelTest::heavyComputation);
         System.out.printf("Soma: %s\n", sum);
         measure(() -> IntStream.range(0, 5).forEach(i -> heavyComputation()));
         measure(() -> IntStream.range(0, 5).parallel().forEach(i -> heavyComputation()));
